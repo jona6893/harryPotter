@@ -1,3 +1,13 @@
+"use strict"
+
+//todo 
+//* set up filter
+//* set up sort
+//* mix the 2 together
+//* search funtion
+
+
+
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
@@ -139,13 +149,6 @@ function bloodStat(cleanUpNames, familes) {
   return cleanUpNames;
 }
 
-// Add images
-function images() {
-  const path = require.context("./images", false, /\.png$/);
-  return path.keys().map(path);
-}
-console.log(images());
-
 // set up filter
 
 // set up sort
@@ -175,7 +178,23 @@ function displayStudents(student) {
   clone.querySelector("[data-field=desc]").textContent = student.house;
   clone.querySelector("[data-field=type]").textContent = student.type;
   clone.querySelector("[data-field=age]").textContent = student.gender;
-  /* clone.querySelector(".studImage").src = `image/${student.lastname.toLowerCase().split('-')[0]}.png`; */
+  if(student.firstname == "Padma"){
+    clone.querySelector(
+      ".studImage"
+    ).src = `images/${student.lastname.toLowerCase()}_${student.firstname.toLowerCase()}.png`;
+  } else if(student.firstname == "Parvati"){
+    clone.querySelector(
+      ".studImage"
+    ).src = `images/${student.lastname.toLowerCase()}_${student.firstname.toLowerCase()}.png`;
+  } else if (student.lastname == undefined) {
+  } else if(student.lastname == "Finch-Fletchley") {
+    clone.querySelector(
+      ".studImage"
+    ).src = `images/${student.lastname.slice(6).toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
+  }
+  else {
+    clone.querySelector(".studImage").src = `images/${student.lastname.toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
+  }
 
   // append clone to list
   document.querySelector("#list tbody").appendChild(clone);
