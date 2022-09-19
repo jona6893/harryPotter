@@ -1,0 +1,12 @@
+{
+    "half": [
+        "Abbott","Bones","Jones","Hopkins","Finnigan","Potter","Brocklehurst","Goldstein","Corner","Bulstrode","Patil","Li","Thomas"
+    ],
+    "pure": [
+        "Boot","Cornfoot","Abbott","Avery","Black","Blishwick","Brown","Bulstrode","Burke","Carrow","Crabbe","Crouch","Fawley","Flint","Gamp",
+        "Gaunt","Goyle","Greengrass","Kama","Lestrange","Longbottom","MacDougal","Macmillan","Malfoy","Max","Moody","Nott","Ollivander","Parkinson",
+        "Peverell","Potter","Prewett","Prince","Rosier","Rowle","Sayre","Selwyn","Shacklebolt","Shafiq","Slughorn","Slytherin","Travers","Tremblay",
+        "Tripe","Urquart","Weasley","Yaxley","Bletchley","Dumbledore","Fudge","Gibbon","Gryffindor","Higgs","Lowe","Macnair","Montague","Mulciber",
+        "Orpington","Pyrites","Perks","Runcorn","Wilkes","Zabini" 
+    ]
+}
