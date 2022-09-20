@@ -5,14 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Harry Potter</title>
 </head>
 <body>
-       <h1>Animals</h1>
+       <h1>Student List</h1>
     <p>
       Filter:
-      <button class="filter" data-action="filter" data-filter="cat">Only Cats</button>
-      <button class="filter" data-action="filter" data-filter="dog">Only Dogs</button>
+      <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
+      <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
+      <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
+      <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
+      <button class="filter" data-action="filter" data-filter="Pure">Pure Blood</button>
+      <button class="filter" data-action="filter" data-filter="Half-Blood">Half Blood</button>
+      <button class="filter" data-action="filter" data-filter="gender">Gender</button>
+      <button class="filter" data-action="filter" data-filter="expelled">expelled</button>
+      <button class="filter" data-action="filter" data-filter="nonExpelled">non-expelled</button>
       <button class="filter" data-action="filter" data-filter="*">all</button>
     </p>
 
@@ -21,10 +28,11 @@
     <table id="list">
       <thead>
         <tr id="sorting">
-          <th data-action="sort" data-sort-direction="asc" data-sort="name">Name</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="type">Type</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="desc">Description</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="age">Age</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</th>
+<!--           <th data-action="sort" data-sort-direction="asc" data-sort="type">Type</th> -->
+          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="age">Gender</th>
         </tr>
       </thead>
       <tbody>
@@ -34,10 +42,11 @@
 
     <template id="studentList">
       <tr>
-        <td data-field="name">NAME</td>
-        <td data-field="type">TYPE</td>
-        <td data-field="desc">DESCRIPTION</td>
-        <td data-field="age">AGE</td>
+        <td data-field="firstname">Firstname</td>
+        <td data-field="lastname">Lastname</td>
+<!--         <td data-field="type">TYPE</td> -->
+        <td data-field="desc">House</td>
+        <td data-field="age">Gender</td>
         <img class="studImage" src="" alt="">
       </tr>
     </template>
