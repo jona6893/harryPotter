@@ -8,6 +8,7 @@
 //* Details-popup
 //* Prefects
 //* Expelling students
+//* Inquisitorial Squad
 //* Hacking
 
 window.addEventListener("DOMContentLoaded", start);
@@ -175,10 +176,10 @@ function sortList(sortBy) {
   if (sortBy === "firstname") {
     console.log("im here");
     sortedList.sort(sortByfirstName);
-  } else if (sortBy === "house") {
-    sortedList.sort(sortByType);
+  } /* else if (sortBy === "house") {
+    sortedList.sort(sortByHouse);
     console.log("type");
-  } else if (sortBy === "lastname") {
+  } */ else if (sortBy === "lastname") {
     sortedList.sort(sortBylastName);
   }
   /* console.log("im over here" + sortedList); */
@@ -200,14 +201,14 @@ function sortBylastName(studentA, studentB) {
     return 1;
   }
 }
-function sortByType(studentA, studentB) {
+/* function sortByHouse(studentA, studentB) {
   if (studentA.house < studentB.house) {
     return -1;
   } else {
     return 1;
   }
 }
-
+ */
 
 
 // set up filter
