@@ -55,12 +55,13 @@ function cleanUp(students) {
     let removeFirstSpace = element.fullname.trim();
     let removeExtraSpace = removeFirstSpace.replace(/\s+/g, " ").trim();
     let tolowerCase = removeExtraSpace.toLowerCase();
-    let nickName = getNickName(tolowerCase);
+    let spiltHyphen = tolowerCase.split('-').join(' ')
+    let nickName = getNickName(spiltHyphen);
     let first =
-      tolowerCase.split(" ")[0].substring(0, 1).toUpperCase() +
-      tolowerCase.split(" ")[0].slice(1);
-    let middle = checkMiddle(tolowerCase, nickName);
-    let last = checkLast(tolowerCase);
+      spiltHyphen.split(" ")[0].substring(0, 1).toUpperCase() +
+      spiltHyphen.split(" ")[0].slice(1);
+    let middle = checkMiddle(spiltHyphen, nickName);
+    let last = checkLast(spiltHyphen);
     let propperHouse = students[i].house.toLowerCase().trim();
     splitNames.push({
       firstname: first,
@@ -88,11 +89,11 @@ function getNickName(tolowerCase) {
 }
 
 // puts the middle name in the right place & Capitalizes it
-function checkMiddle(tolowerCase, nickName) {
-  if (tolowerCase.split(" ")[2] === undefined || tolowerCase.split('"')[1]) {
+function checkMiddle(spiltHyphen, nickName) {
+  if (spiltHyphen.split(" ")[2] === undefined || spiltHyphen.split('"')[1]) {
     return "";
   } else {
-    let midNames = tolowerCase.split(" ")[1];
+    let midNames = spiltHyphen.split(" ")[1];
     return midNames.substring(0, 1).toUpperCase() + midNames.slice(1);
   }
 }
@@ -176,13 +177,9 @@ function sortList(sortBy) {
   if (sortBy === "firstname") {
     console.log("im here");
     sortedList.sort(sortByfirstName);
-  } /* else if (sortBy === "house") {
-    sortedList.sort(sortByHouse);
-    console.log("type");
-  } */ else if (sortBy === "lastname") {
+  }  else if (sortBy === "lastname") {
     sortedList.sort(sortBylastName);
   }
-  /* console.log("im over here" + sortedList); */
 
   displayList(sortedList);
 }
@@ -201,14 +198,6 @@ function sortBylastName(studentA, studentB) {
     return 1;
   }
 }
-/* function sortByHouse(studentA, studentB) {
-  if (studentA.house < studentB.house) {
-    return -1;
-  } else {
-    return 1;
-  }
-}
- */
 
 
 // set up filter
@@ -265,27 +254,27 @@ function displayStudents(student) {
     "[data-field=lastname]"
   ).textContent = `${student.middlename} ${student.lastname}`;
   clone.querySelector("[data-field=desc]").textContent = student.house;
-  /*   clone.querySelector("[data-field=type]").textContent = student.type; */
   clone.querySelector("[data-field=age]").textContent = student.gender;
-  if (student.firstname == "Padma") {
-    clone.querySelector(
-      ".studImage"
-    ).src = `images/${student.lastname.toLowerCase()}_${student.firstname.toLowerCase()}.png`;
-  } else if (student.firstname == "Parvati") {
-    clone.querySelector(
-      ".studImage"
-    ).src = `images/${student.lastname.toLowerCase()}_${student.firstname.toLowerCase()}.png`;
-  } else if (student.lastname == undefined) {
-  } else if (student.lastname == "Finch-Fletchley") {
-    clone.querySelector(".studImage").src = `images/${student.lastname
-      .slice(6)
-      .toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
-  } else {
-    clone.querySelector(
-      ".studImage"
-    ).src = `images/${student.lastname.toLowerCase()}_${student.firstname[0].toLowerCase()}.png`;
-  }
+    let url = `images/${student.lastname}_${student.firstname[0]}.png`;
+    if(UrlExists(url) === true) {
+      clone.querySelector(
+        ".studImage"
+      ).src = `images/${student.lastname}_${student.firstname[0]}.png`;
+      } else if (UrlExists(url) === false) {
+        clone.querySelector(
+          ".studImage"
+        ).src = `images/${student.lastname}_${student.firstname}.png`;
+      }
 
   // append clone to list
   document.querySelector("#list tbody").appendChild(clone);
+}
+
+//* check if the image path is real or not
+function UrlExists(url) {
+  var http = new XMLHttpRequest();
+  http.open("HEAD", url, false);
+  http.send();
+  if (http.status != 404) return true;
+  else return false;
 }
