@@ -12,18 +12,68 @@
 //* Hacking
 
 window.addEventListener("DOMContentLoaded", start);
+window.addEventListener("DOMContentLoaded", generateFilterList);
 
-let allStudent = []
+// generate filters dynamically (Don't Repeat Yourself)
+function generateFilterList() {
+  [
+    "Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin",
+    "Pure", "Half-Blood", "Gender", "Expelled", "Non-Expelled"
+  ].forEach(filterName => {
+    let newElement = document.createElement("button");
+    newElement.setAttribute("class", "filter");
+    newElement.setAttribute("data-action", "filter");
+    newElement.setAttribute("data-filter", filterName);
+    newElement.setAttribute("data-active", "false");
+    newElement.innerText = filterName;
+    newElement.addEventListener("click", e => {
+      // invert selection on click
+      if (e.target.getAttribute("data-active") === "false") {
+        e.target.setAttribute("data-active", "true");
+        // style, just to make things obvious
+        e.target.setAttribute("style", "color: green;")
+      }
+      else {
+        e.target.setAttribute("data-active", "false")
+        e.target.setAttribute("style", "");
+      }
+      // then display the list
+      displayOrganizedList();
+    })
+    document.getElementById("filterContainer").appendChild(newElement);
+  });
+}
+
+function displayOrganizedList() {
+  // clone the array, so we can mutate it
+  let students = [...allStudent];
+  // iterate through all active filters
+  for (const filterElement of document.getElementsByClassName("filter")) {
+    if (filterElement.getAttribute("data-active") !== "true") {
+      continue;
+    }
+    let filter = filterElement.getAttribute("data-filter");
+    // filtering can be done in-line
+    if (filter === "Pure" || filter === "Half-Blood") {
+      students = students.filter(
+          (student) => student.bloodStatus === filter
+      );
+    } else if (filter === "Slytherin" || filter === "Hufflepuff" || filter === "Ravenclaw" || filter === "Gryffindor"){
+      students = students.filter(
+          (student) => student.house === filter
+      );
+    }
+  }
+  displayList(sortList(students));
+}
+
+let allStudent = [];
+let sortBy = "";
 
 function start() {
-
-  let filterButtons = document.querySelectorAll('[data-action="filter"]');
   let sortButtons = document.querySelectorAll('[data-action="sort"]');
   sortButtons.forEach((e) => {
     e.addEventListener("click", selectSort);
-  });
-  filterButtons.forEach((e) => {
-    e.addEventListener("click", selectFilter);
   });
 
   loadJSON();
@@ -167,21 +217,21 @@ function bloodStat(cleanUpNames, familes) {
 
 // set up sort
 function selectSort(event) {
-  let sortButton = event.target.dataset.sort;
-  sortList(sortButton);
+  sortBy = event.target.dataset.sort;
 }
 
-function sortList(sortBy) {
-  let sortedList = allStudent;
-  console.log(sortBy);
+function sortList(sortedList) {
   if (sortBy === "firstname") {
     console.log("im here");
     sortedList.sort(sortByfirstName);
   }  else if (sortBy === "lastname") {
     sortedList.sort(sortBylastName);
+  } else {
+    // default: sort by first name
+    sortedList.sort(sortByfirstName);
   }
 
-  displayList(sortedList);
+  return sortedList;
 }
 
 function sortByfirstName(studentA, studentB) {
@@ -212,6 +262,7 @@ function selectFilter(event) {
     displayList(filterListHouse(filterButton));
   }
 }
+
 function filterListBlood(filterButton) {
   let filteredList = allStudent;
   console.log(filteredList);
