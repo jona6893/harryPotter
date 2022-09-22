@@ -11,7 +11,8 @@
        <h1>Student List</h1>
     <p>
       Filter:
-        <div id="filterContainer"></div>
+        <div id="filterContainer"><input class='filter' data-active="false" data-filter="search" type="search"></div>
+        
     </p>
 
     <hr>
@@ -24,6 +25,7 @@
 <!--           <th data-action="sort" data-sort-direction="asc" data-sort="type">Type</th> -->
           <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="age">Gender</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="prefects">Prefects</th>
         </tr>
       </thead>
       <tbody>
@@ -35,9 +37,11 @@
       <tr>
         <td data-field="firstname">Firstname</td>
         <td data-field="lastname">Lastname</td>
-<!--         <td data-field="type">TYPE</td> -->
+        <!--         <td data-field="type">TYPE</td> -->
         <td data-field="desc">House</td>
         <td data-field="age">Gender</td>
+        <td><div class="star"></div></td>
+        <td data-field="prefects"></td>
         <img class="studImage" src="" alt="">
       </tr>
     </template>

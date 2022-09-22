@@ -1,0 +1,9 @@
+.star{
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: gray;
+}
+.goldenStar{
+    background-color: gold;
+}

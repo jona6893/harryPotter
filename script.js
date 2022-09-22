@@ -1,12 +1,13 @@
 "use strict";
 
 //todo
-//* set up filter
-//* set up sort
-//* mix the 2 together
-//* search funtion
-//* Details-popup
-//* Prefects
+//* set up filter √
+//* set up sort √
+//* mix the 2 together √
+//* search funtion √
+//* Details-popup 
+//* Prefects 
+//* Add yourself
 //* Expelling students
 //* Inquisitorial Squad
 //* Hacking
@@ -16,9 +17,13 @@ window.addEventListener("DOMContentLoaded", generateFilterList);
 
 // generate filters dynamically (Don't Repeat Yourself)
 function generateFilterList() {
+  let search = document.querySelector(".filter");
+  search.addEventListener("keyup", (e) => {
+    displayOrganizedList();
+  });
   [
     "Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin",
-    "Pure", "Half-Blood", "Gender", "Expelled", "Non-Expelled"
+    "Pure", "Half-Blood", "Expelled", "Non-Expelled"
   ].forEach(filterName => {
     let newElement = document.createElement("button");
     newElement.setAttribute("class", "filter");
@@ -42,30 +47,57 @@ function generateFilterList() {
     })
     document.getElementById("filterContainer").appendChild(newElement);
   });
+
 }
+/* let search = document.querySelector(".searchField");
+search.addEventListener('input', () => {
+}) */
 
 function displayOrganizedList() {
   // clone the array, so we can mutate it
   let students = [...allStudent];
+    console.log('well this works')
+    students = searchField(students)
   // iterate through all active filters
   for (const filterElement of document.getElementsByClassName("filter")) {
+    
     if (filterElement.getAttribute("data-active") !== "true") {
       continue;
     }
     let filter = filterElement.getAttribute("data-filter");
     // filtering can be done in-line
     if (filter === "Pure" || filter === "Half-Blood") {
-      students = students.filter(
-          (student) => student.bloodStatus === filter
-      );
-    } else if (filter === "Slytherin" || filter === "Hufflepuff" || filter === "Ravenclaw" || filter === "Gryffindor"){
-      students = students.filter(
-          (student) => student.house === filter
-      );
+      students = students.filter((student) => student.bloodStatus === filter);
+    } else if (
+      filter === "Slytherin" ||
+      filter === "Hufflepuff" ||
+      filter === "Ravenclaw" ||
+      filter === "Gryffindor"
+    ) {
+      students = students.filter((student) => student.house === filter);
     }
   }
+
+  //students = students.filter(searchField());
   displayList(sortList(students));
 }
+
+// Search function, filters 3 possible options when the search field is typed in.
+function searchField(students) {
+  let searchTyped = document.querySelector(".filter").value.toLowerCase()
+//* denne statement virker men kun med 
+return students.filter((stud) => {
+  if(stud.lastname === undefined) {
+  } else {
+  return (
+    stud.house.toLowerCase().includes(searchTyped) ||
+    stud.firstname.toLowerCase().includes(searchTyped) ||
+    stud.lastname.toLowerCase().includes(searchTyped)
+  );
+}})
+
+}
+
 
 let allStudent = [];
 let sortBy = "";
@@ -75,7 +107,7 @@ function start() {
   sortButtons.forEach((e) => {
     e.addEventListener("click", selectSort);
   });
-
+  //* Prefects
   loadJSON();
 }
 async function loadJSON() {
@@ -122,6 +154,7 @@ function cleanUp(students) {
         students[i].gender.substring(0, 1).toUpperCase() +
         students[i].gender.slice(1),
       house: propperHouse.substring(0, 1).toUpperCase() + propperHouse.slice(1),
+      prefect: false
     });
   });
   //console.log(splitNames);
@@ -218,9 +251,11 @@ function bloodStat(cleanUpNames, familes) {
 // set up sort
 function selectSort(event) {
   sortBy = event.target.dataset.sort;
+  displayOrganizedList()
 }
 
-function sortList(sortedList) {
+ function sortList(sortedList) {
+  //console.log("sortlist function")
   if (sortBy === "firstname") {
     console.log("im here");
     sortedList.sort(sortByfirstName);
@@ -247,41 +282,9 @@ function sortBylastName(studentA, studentB) {
   } else {
     return 1;
   }
-}
+} 
 
 
-// set up filter
-function selectFilter(event) {
-  let filterButton = event.target.dataset.filter;
-  console.log(filterButton);
-  if (filterButton === "*") {
-    return displayList(allStudent);
-  } else if (filterButton === "Pure" || filterButton === "Half-Blood") {
-    displayList(filterListBlood(filterButton));
-  } else if (filterButton === "Slytherin" || filterButton === "Hufflepuff" || filterButton === "Ravenclaw" || filterButton === "Gryffindor"){
-    displayList(filterListHouse(filterButton));
-  }
-}
-
-function filterListBlood(filterButton) {
-  let filteredList = allStudent;
-  console.log(filteredList);
-  return (filteredList = allStudent.filter(
-    (student) => student.bloodStatus === filterButton
-  ));
-}
-function filterListHouse(filterButton) {
-  let filteredList = allStudent;
-  console.log(filteredList);
-  return (filteredList = allStudent.filter(
-    (student) => student.house === filterButton
-  ));
-  /*   displayList(filteredList); */
-}
-
-// mix the 2 together
-
-// search funtion
 
 function displayList(listOfAllStudents) {
   // clear the list
@@ -289,8 +292,11 @@ function displayList(listOfAllStudents) {
 
   // build a new list
   listOfAllStudents.forEach(displayStudents);
+
+  //prefects(listOfAllStudents);
   //console.log(listOfAllStudents);
 }
+
 
 function displayStudents(student) {
   // create clone
@@ -306,20 +312,23 @@ function displayStudents(student) {
   ).textContent = `${student.middlename} ${student.lastname}`;
   clone.querySelector("[data-field=desc]").textContent = student.house;
   clone.querySelector("[data-field=age]").textContent = student.gender;
-    let url = `images/${student.lastname}_${student.firstname[0]}.png`;
-    if(UrlExists(url) === true) {
-      clone.querySelector(
-        ".studImage"
-      ).src = `images/${student.lastname}_${student.firstname[0]}.png`;
-      } else if (UrlExists(url) === false) {
-        clone.querySelector(
-          ".studImage"
-        ).src = `images/${student.lastname}_${student.firstname}.png`;
-      }
-
+  if(student.prefects === !undefined){
+    clone.querySelector("[data-field=prefects]").textContent = student.prefect
+  }
+  let url = `images/${student.lastname}_${student.firstname[0]}.png`;
+  if (UrlExists(url) === true) {
+    clone.querySelector(
+      ".studImage"
+    ).src = `images/${student.lastname}_${student.firstname[0]}.png`;
+  } else if (UrlExists(url) === false) {
+    clone.querySelector(
+      ".studImage"
+    ).src = `images/${student.lastname}_${student.firstname}.png`;
+  }
   // append clone to list
   document.querySelector("#list tbody").appendChild(clone);
-}
+  
+} 
 
 //* check if the image path is real or not
 function UrlExists(url) {
@@ -329,3 +338,25 @@ function UrlExists(url) {
   if (http.status != 404) return true;
   else return false;
 }
+
+//* Prefects
+
+/* function prefects(listOfAllStudents) {
+
+  let star = document.querySelectorAll(".star");
+  star.forEach((e, i) => {
+    e.addEventListener("click", () => {
+      if (listOfAllStudents[i].prefect === !true) {
+        listOfAllStudents[i].prefect = true;
+        e.classList.add("goldenStar");
+      } else {
+        console.log(listOfAllStudents[i].prefect);
+        listOfAllStudents[i].prefect = false;
+        e.classList.remove("goldenStar");
+      }
+    });
+  });
+  console.log("down here");
+
+
+} */
