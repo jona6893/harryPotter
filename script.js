@@ -13,7 +13,7 @@
 //* Hacking
 
 window.addEventListener("DOMContentLoaded", start);
-window.addEventListener("DOMContentLoaded", generateFilterList);
+
 
 // generate filters dynamically (Don't Repeat Yourself)
 function generateFilterList() {
@@ -23,7 +23,7 @@ function generateFilterList() {
   });
   [
     "Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin",
-    "Pure", "Half-Blood", "Expelled", "Non-Expelled"
+    "Pure", "Half-Blood", "Expelled", "Prefect"
   ].forEach(filterName => {
     let newElement = document.createElement("button");
     newElement.setAttribute("class", "filter");
@@ -75,6 +75,10 @@ function displayOrganizedList() {
       filter === "Gryffindor"
     ) {
       students = students.filter((student) => student.house === filter);
+    } else if (filter === "Prefect") {
+      students = students.filter((student) => student.prefect === true)
+    } else if(filter === "Expelled") {
+
     }
   }
 
@@ -101,6 +105,7 @@ return students.filter((stud) => {
 
 let allStudent = [];
 let sortBy = "";
+let number
 
 function start() {
   let sortButtons = document.querySelectorAll('[data-action="sort"]');
@@ -127,9 +132,12 @@ function controller(students, familes) {
   let cleanUpNames = cleanUp(students);
   allStudent = bloodStat(cleanUpNames, familes);
   console.log(/* cleanUpNames, familes */ allStudent);
+  generateFilterList()
   displayList(allStudent);
+  
 }
-// clean up the list. first, middle, last name & capitalize.
+
+//* ---------- Clean Up The Data ----------
 
 function cleanUp(students) {
   let splitNames = [];
@@ -154,7 +162,9 @@ function cleanUp(students) {
         students[i].gender.substring(0, 1).toUpperCase() +
         students[i].gender.slice(1),
       house: propperHouse.substring(0, 1).toUpperCase() + propperHouse.slice(1),
-      prefect: false
+      prefect: false,
+      expelled: false,
+      insquad: false
     });
   });
   //console.log(splitNames);
@@ -248,7 +258,7 @@ function bloodStat(cleanUpNames, familes) {
   return cleanUpNames;
 }
 
-// set up sort
+//* ---------- Sorting ----------
 function selectSort(event) {
   sortBy = event.target.dataset.sort;
   displayOrganizedList()
@@ -285,25 +295,72 @@ function sortBylastName(studentA, studentB) {
 } 
 
 
+//* ---------- Prefects ----------
+//checks if the student is already a prefect.
+function clickedPrefect(listOfAllStudents) {
 
+document.querySelectorAll(".star").forEach((e, i) => {
+  e.addEventListener("click", () => {
+    if(listOfAllStudents[i].prefect === true) {
+      listOfAllStudents[i].prefect = false
+      displayList(listOfAllStudents)
+    } else{
+     displayList(checkHouseAndPrepect(listOfAllStudents, i))
+    }
+  })
+})
+}
+// check if there is more the 2 prefects the in same house.
+function checkHouseAndPrepect(listOfAllStudents, i){
+  
+    const preStud = allStudent.filter((stud) => stud.prefect);
+    const other = preStud.filter(
+      (stud) => stud.house === listOfAllStudents[i].house
+    );
+    console.log(other);
+    if (other.length >= 2) {
+      console.log("there can only be two of each house");
+      return listOfAllStudents;
+    } else {
+      listOfAllStudents[i].prefect = true;
+      return listOfAllStudents;
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//* ---------- Display List ----------
 function displayList(listOfAllStudents) {
   // clear the list
   document.querySelector("#list tbody").innerHTML = "";
-
+  number = 0
   // build a new list
   listOfAllStudents.forEach(displayStudents);
-
+  clickedPrefect(listOfAllStudents);
   //prefects(listOfAllStudents);
   //console.log(listOfAllStudents);
 }
 
 
 function displayStudents(student) {
+  number++
   // create clone
   const clone = document
     .querySelector("template#studentList")
     .content.cloneNode(true);
+
   // set clone data
+  document.querySelector('h2').textContent = `Number of Students ${number}`
   clone.querySelector(
     "[data-field=firstname]"
   ).textContent = `${student.firstname}`;
@@ -312,9 +369,6 @@ function displayStudents(student) {
   ).textContent = `${student.middlename} ${student.lastname}`;
   clone.querySelector("[data-field=desc]").textContent = student.house;
   clone.querySelector("[data-field=age]").textContent = student.gender;
-  if(student.prefects === !undefined){
-    clone.querySelector("[data-field=prefects]").textContent = student.prefect
-  }
   let url = `images/${student.lastname}_${student.firstname[0]}.png`;
   if (UrlExists(url) === true) {
     clone.querySelector(
@@ -325,9 +379,18 @@ function displayStudents(student) {
       ".studImage"
     ).src = `images/${student.lastname}_${student.firstname}.png`;
   }
+
+  // check if prefects
+
+  if (student.prefect === true) {
+    clone.querySelector(".star").classList.add('goldenStar');
+    console.log(student.prefect)
+  } else {
+    clone.querySelector(".star").classList.remove("goldenStar");
+  }
+
   // append clone to list
   document.querySelector("#list tbody").appendChild(clone);
-  
 } 
 
 //* check if the image path is real or not
@@ -339,24 +402,3 @@ function UrlExists(url) {
   else return false;
 }
 
-//* Prefects
-
-/* function prefects(listOfAllStudents) {
-
-  let star = document.querySelectorAll(".star");
-  star.forEach((e, i) => {
-    e.addEventListener("click", () => {
-      if (listOfAllStudents[i].prefect === !true) {
-        listOfAllStudents[i].prefect = true;
-        e.classList.add("goldenStar");
-      } else {
-        console.log(listOfAllStudents[i].prefect);
-        listOfAllStudents[i].prefect = false;
-        e.classList.remove("goldenStar");
-      }
-    });
-  });
-  console.log("down here");
-
-
-} */
