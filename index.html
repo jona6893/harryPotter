@@ -9,6 +9,34 @@
 </head>
 <body>
        <h1>Student List</h1>
+       <h4>Add Student</h4>
+       <div class="form">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="mname">Middle name:</label><br>
+        <input type="text" id="mname" name="mname" value=""><br><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br><br>
+        <label for="house">House:</label><br>
+        <select name="house" id="house">
+          <option value="Slytherin">Slytherin</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Gryffindor">Gryffindor</option>
+        </select>
+        <label for="blood">Blood Status:</label><br>
+        <select name="house" id="blood">
+          <option value="Pure">Pure</option>
+          <option value="Half-Blood">Half-Blood</option>
+        </select>
+        <label for="gender">Gender:</label><br>
+        <select name="gender" id="gender">
+          <option value="Boy">Boy</option>
+          <option value="Girl">Girl</option>
+          <option value="Other">Other</option>
+        </select>
+        <button id="submit">Submit</button>
+       </div>
     <p>
       Filter:
         <div id="filterContainer"><input class='filter' data-active="false" data-filter="search" type="search"></div>
@@ -23,25 +51,40 @@
         <tr id="sorting">
           <th data-action="sort" data-sort-direction="asc" data-sort="firstname">Firstname</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="lastname">Lastname</th>
-<!--           <th data-action="sort" data-sort-direction="asc" data-sort="type">Type</th> -->
           <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
-          <th data-action="sort" data-sort-direction="asc" data-sort="age">Gender</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="prefects">Prefects</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="inquisitorial">Inquisitorial Squad</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="expelled">Expel</th>
         </tr>
       </thead>
       <tbody>
-        <!-- animal template will be copied and inserted here -->
       </tbody>
     </table>
+    <aside id="modal">
+      <article>
+        <div class="imageCon">
+          <img class="studImage" src="" alt="">
+        </div>
+        <div class="popText">
+          <h2 class="titel2"></h2>
+          <p data-field="house"></p>
+          <p data-field="bloodstat"></p>
+          <p data-field="gender"></p>
+          <p data-field="nickName"></p>
+          <p data-field="prefectStatus"></p>
+          <p data-field="insquad"></p>
+          <p data-field="expel"></p>
+        </div>
+      </article>
+    </aside>
     <template id="studentList">
       <tr>
         <td data-field="firstname">Firstname</td>
         <td data-field="lastname">Lastname</td>
-        <!--         <td data-field="type">TYPE</td> -->
         <td data-field="desc">House</td>
-        <td data-field="age">Gender</td>
-        <td data-field="prefects"><div class="star"></div></td>
-        <img class="studImage" src="" alt="">
+        <td class="starContainer"data-field="prefects"><div class="star"></div></td>
+        <td class="isContainer"data-field="inquisitorial"><div class="insquad"></div></td>
+        <td class="expelContainer"data-field="expel"><div class="expel"></div></td>
       </tr>
     </template>
     <script src="script.js"></script>

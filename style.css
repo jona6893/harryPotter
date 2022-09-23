@@ -1,9 +1,167 @@
-.star{
-    width: 20px;
-    height: 20px;
-    border-radius: 100px;
-    background-color: gray;
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
 }
+.form > input{
+    height: 20px;
+}
+
+
+/** Prefects Star */
+
 .goldenStar{
-    background-color: gold;
+    --star-color: gold !important;
+}
+
+.star {
+ --star-color:gray;
+ margin:1em auto;
+ font-size:1em;
+ position: relative;
+ display: block;
+ width: 0px;
+ height: 0px;
+ border-right: 1em solid transparent;
+ border-bottom: 0.7em solid var(--star-color);
+ border-left: 1em solid transparent;
+ transform: rotate(35deg);
+}
+.star:before {
+ border-bottom: 0.8em solid var(--star-color);
+ border-left: 0.3em solid transparent;
+ border-right: 0.3em solid transparent;
+ position: absolute;
+ height: 0;
+ width: 0;
+ top: -0.45em;
+ left: -0.65em;
+ display: block;
+ content:"";
+ transform: rotate(-35deg);
+}
+.star:after {
+ position: absolute;
+ display: block;
+ top: 0.03em;
+ left: -1.05em;
+ width: 0;
+ height: 0;
+ border-right: 1em solid transparent;
+ border-bottom: 0.7em solid var(--star-color);
+ border-left: 1em solid transparent;
+ transform: rotate(-70deg);
+ content:"";
+}
+
+
+/** Layout Styling  */
+
+
+button{
+    border:none;
+    background-color:lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+}
+#filterContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+th, td {
+  padding: 15px;
+}
+th{
+    cursor: pointer;
+}
+
+.starContainer{
+    display: grid;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/** inquisitorial Squad  */
+
+
+.insquad{
+    background-image: url("badge_images/is_grayed.webp");
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+.insquadColor{
+    background-image: url("badge_images/is_colored.webp");
+}
+
+.isContainer, .expelContainer{
+    cursor: pointer;
+}
+
+/** Expel Student  */
+
+.expel{
+    background-image: url("badge_images/expel.png");
+    background-size: cover;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+}
+
+
+
+
+/** popupKort */
+#modal {
+  display: none;
+  grid-template-rows: 0.5fr 1fr 0.5fr;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: #00000014;
+  z-index: 5;
+}
+
+#modal article {
+  grid-area: 2;
+  /* display: grid; */
+  gap: 10px;
+  /* grid-template-rows: 300px 1fr 0.5fr; */
+  justify-items: start;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  min-width: 400px;
+  max-height: 600px;
+  background-color: white;
+  padding: 5%;
+  word-wrap: break-word;
+  border-radius: 20px;
+  box-shadow: rgb(50 50 93 / 25%) 0px 50px 100px -20px,
+    rgb(0 0 0 / 30%) 0px 30px 60px -30px;
+}
+
+.imageCon {
+  width: 100%;
+  max-height: 300px;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+}
+#modal img {
+  margin: 0%;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
+.popText {
+  display: grid;
+  justify-items: center;
 }
