@@ -1,0 +1,311 @@
+<mxfile host="65bd71144e">
+    <diagram id="w1gj5pmHgL5_a_zhYhuJ" name="Page-1">
+        <mxGraphModel dx="1517" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;startArrow=none;" edge="1" parent="1" source="24" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Window Listener =&amp;gt;&lt;br&gt;Start" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="355" y="20" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="5" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;startArrow=none;" edge="1" parent="1" source="26" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Select and listen to sortButtons&lt;br&gt;start - loadJson()" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="edgeStyle=none;html=1;fontSize=10;" edge="1" parent="1" source="7" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="sorby = event&lt;br&gt;displayOrganizedList&lt;br&gt;()" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="120" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="edgeStyle=none;html=1;fontSize=10;" edge="1" parent="1" source="9" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;span style=&quot;font-size: 10px&quot;&gt;load both Json files and start prepareobject()&lt;/span&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="230" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="13" target="31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="13" target="39">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;startArrow=none;" edge="1" parent="1" source="61" target="59">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Filter the list and get&amp;nbsp;&lt;br&gt;search field result" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="edgeStyle=none;html=1;fontSize=10;" edge="1" parent="1" source="16" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Start-controller(students, familes)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="330" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;fontSize=10;" edge="1" parent="1" source="18" target="20">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="18" target="31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="18" target="35">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="18" target="54">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="get cleaned up names&lt;br&gt;and Bloodstatus&lt;br&gt;make filter list&lt;br&gt;display all student on screen" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="430" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="make buttons based on array&lt;br&gt;place event listener" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="280" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;p style=&quot;color: rgb(212 , 212 , 212) ; line-height: 18px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;span style=&quot;color: rgb(220 , 220 , 170)&quot;&gt;generateFilterList&lt;/span&gt;()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="565" y="245" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="&lt;p style=&quot;color: rgb(212 , 212 , 212) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;span style=&quot;color: rgb(220 , 220 , 170)&quot;&gt;selectSort&lt;/span&gt;(&lt;span style=&quot;color: rgb(156 , 220 , 254)&quot;&gt;event&lt;/span&gt;)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="85" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;start()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="60" width="50" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="edgeStyle=none;html=1;endArrow=none;" edge="1" parent="1" source="4" target="24">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="414" y="80" as="sourcePoint"/>
+                        <mxPoint x="414" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="&lt;div style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;p style=&quot;color: rgb(212 , 212 , 212) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;span style=&quot;color: rgb(220 , 220 , 170)&quot;&gt;loadJSON&lt;/span&gt;()&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="374" y="180" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="edgeStyle=none;html=1;endArrow=none;" edge="1" parent="1" source="5" target="26">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="414" y="180" as="sourcePoint"/>
+                        <mxPoint x="414" y="220" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="&lt;div style=&quot;line-height: 18px&quot;&gt;&lt;p style=&quot;color: rgb(212 , 212 , 212) ; line-height: 18px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;span style=&quot;color: rgb(220 , 220 , 170)&quot;&gt;prepareObjects&lt;/span&gt;(&lt;span style=&quot;color: rgb(79 , 193 , 255)&quot;&gt;students&lt;/span&gt;, &lt;span style=&quot;color: rgb(79 , 193 , 255)&quot;&gt;familes&lt;/span&gt;);&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="290" width="170" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;div style=&quot;line-height: 18px&quot;&gt;&lt;p style=&quot;color: rgb(212 , 212 , 212) ; line-height: 18px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;span style=&quot;color: rgb(220 , 220 , 170)&quot;&gt;controller&lt;/span&gt;(&lt;span style=&quot;color: rgb(156 , 220 , 254)&quot;&gt;students&lt;/span&gt;, &lt;span style=&quot;color: rgb(156 , 220 , 254)&quot;&gt;familes&lt;/span&gt;);&lt;/font&gt;&lt;/p&gt;&lt;/div&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="344" y="390" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="&lt;p style=&quot;color: rgb(212 , 212 , 212) ; font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font style=&quot;font-size: 10px&quot;&gt;&lt;span style=&quot;color: rgb(220 , 220 , 170)&quot;&gt;displayOrganizedList&lt;/span&gt;()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="540" y="360" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="70">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="73">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="75">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="77">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="72">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="72">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="31" target="82">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="Empties the Html&amp;nbsp;&lt;br&gt;set number = 0&lt;br&gt;Listener on Submit button" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="650" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;displayList()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="369" y="610" width="90" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="35" target="45">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="35" target="47">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="35" target="47">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="35" target="50">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" style="edgeStyle=none;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="35" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Cleans up the string values&amp;nbsp;&lt;br&gt;and pushes to new array with correct values" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="215" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="104" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="39">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="680" y="420" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="filters the search field input with the student list" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="707" y="390" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;searchField(students)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="697" y="360" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;cleanUp(students)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="185" y="170" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" style="edgeStyle=none;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="45" target="35">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Checks if there is a nickname in the json.&lt;br&gt;returns that nickname" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="80" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="checks for hyphen and middlename.&lt;br&gt;returns&amp;nbsp; middlename" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="205" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="50" target="35">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="checks if there is a lastname.&lt;br&gt;returns lastname" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-50" y="325" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="54">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="350" y="475" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="54" value="Adds the correct bloodstat to every student" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="185" y="430" width="120" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;getNickName(tolowerCase)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="-70" y="40" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;checkMiddle(splitHyphen)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="-65" y="160" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;checkLast(tolowerCase)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="-60" y="285" width="140" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="59" target="63">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="59" target="65">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="Sorts by Firstname or lastname" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;sortList(sortedList)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="545" y="460" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;endArrow=none;" edge="1" parent="1" source="13" target="61">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="615" y="450" as="sourcePoint"/>
+                        <mxPoint x="615" y="490" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="105" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="63" target="59">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="Sorts alphabetical based on firstname" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="490" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="Sorts alphabetical based on lastname" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="730" y="580" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;sortBylastname(studentA,studentB)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="690" y="550" width="210" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;sortByfirstName(studentA, studentB)&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="685" y="460" width="230" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;bloodStat()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="395" width="70" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="70" target="107">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="70" target="109">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="displays all students&amp;nbsp;&lt;br&gt;check values for:&amp;nbsp;&lt;span style=&quot;color: rgb(212 , 212 , 212)&quot;&gt;Inquisitorial Squad and Prefect.&amp;nbsp;&lt;br&gt;adds listener to first name and open modal&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="354" y="860" width="120" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;displayStudents()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="355" y="820" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="73" target="88">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="73" target="31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="checks if Student is already a prefect&lt;br&gt;returns whole list" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="75" target="31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="75" target="94">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="check if hack is active.&lt;br&gt;&lt;span&gt;checks if student is part of&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(212 , 212 , 212)&quot;&gt;Inquisitorial Squad&lt;/span&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="630" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="check if student name is 'Jonathan' =&amp;gt; alerts can expel.&lt;br&gt;else removes student" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="730" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="check submit fields and add a new student to the front of the list." style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="820" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;clickedPrefect()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="500" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;clickedIS&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="590" width="60" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;expelStudent()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="35" y="690" width="90" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;addStudent&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="780" width="80" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="88" target="73">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="checks how many from the students house is a prefect.&lt;br&gt;if more then 2 returns the whole list&lt;br&gt;if less adds student to prefects" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-185" y="500" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;checkHouseAndPrepect()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="-200" y="460" width="150" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="97" value="" style="edgeStyle=none;html=1;fontFamily=Helvetica;fontSize=10;" edge="1" parent="1" source="94" target="75">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="check if student is slytherin &amp;amp; pure&lt;br&gt;returns updated list" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-180" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="96" value="&lt;p style=&quot;font-size: 12px ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;slyAndPure&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="-160" y="600" width="80" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="107" value="Displays the selected students information" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="860" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="109" value="Check if the image url resolves in an error" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="860" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;UrlExists()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="210" y="830" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="112" value="&lt;p style=&quot;font-family: &amp;#34;menlo&amp;#34; , &amp;#34;monaco&amp;#34; , &amp;#34;courier new&amp;#34; , monospace ; line-height: 18px&quot;&gt;&lt;font color=&quot;#dcdcaa&quot;&gt;popupWindow()&lt;/font&gt;&lt;/p&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontSize=10;" vertex="1" parent="1">
+                    <mxGeometry x="545" y="830" width="90" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
