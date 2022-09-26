@@ -6,7 +6,9 @@
 .form > input{
     height: 20px;
 }
-
+[data-field="firstname"] {
+  cursor: pointer;
+}
 
 /** Prefects Star */
 

@@ -1,5 +1,5 @@
 "use strict";
-
+// active hack by pressing the 'Delete' button ot by type 'intHacking()' in the console
 //todo
 //* set up filter √
 //* set up sort √
@@ -10,9 +10,16 @@
 //* Inquisitorial Squad √
 //* Expelling students √
 //* Add yourself √
-//* Hacking
+//* Hacking √
 
 window.addEventListener("DOMContentLoaded", start);
+// activates hacking
+document.addEventListener("keyup", (event) => {
+  if (event.key == "Delete") {
+    intHacking();
+  }
+});
+//* ---------- Make filter List and check search field ----------
 
 // generate filters dynamically (Don't Repeat Yourself)
 function generateFilterList() {
@@ -52,7 +59,7 @@ function generateFilterList() {
     document.getElementById("filterContainer").appendChild(newElement);
   });
 }
-
+//* ---------- Filter based on Buttons ----------
 function displayOrganizedList() {
   // clone the array, so we can mutate it
   let students = [...allStudent];
@@ -86,6 +93,8 @@ function displayOrganizedList() {
   displayList(sortList(students));
 }
 
+//* ---------- Search Field ----------
+
 // Search function, filters 3 possible options when the search field is typed in.
 function searchField(students) {
   let searchTyped = document.querySelector(".filter").value.toLowerCase();
@@ -105,7 +114,10 @@ function searchField(students) {
 let allStudent = [];
 let sortBy = "";
 let number;
+let hackActive = false;
 const modal = document.querySelector("#modal");
+
+//* ---------- Start, Load jSon & control ----------
 
 function start() {
   let sortButtons = document.querySelectorAll('[data-action="sort"]');
@@ -328,11 +340,30 @@ function checkHouseAndPrepect(listOfAllStudents, i) {
 function clickedIS(listOfAllStudents) {
   document.querySelectorAll(".insquad").forEach((e, i) => {
     e.addEventListener("click", () => {
-      if (listOfAllStudents[i].insquad === true) {
-        listOfAllStudents[i].insquad = false;
-        displayList(listOfAllStudents);
+      if (hackActive === true) {
+        if (
+          listOfAllStudents[i].insquad === false &&
+          listOfAllStudents[i].house === "Slytherin" &&
+          listOfAllStudents[i].bloodStatus === "Pure"
+        ) {
+          listOfAllStudents[i].insquad = true;
+          displayList(listOfAllStudents);
+          setTimeout(() => {
+            listOfAllStudents[i].insquad = false;
+            displayList(listOfAllStudents);
+            alert(
+              `${listOfAllStudents[i].firstname} was kicked from the squad`
+            );
+          }, 2000);
+        }
+        /* alert("hack active"); */
       } else {
-        displayList(slyAndPure(listOfAllStudents, i));
+        if (listOfAllStudents[i].insquad === true) {
+          listOfAllStudents[i].insquad = false;
+          displayList(listOfAllStudents);
+        } else {
+          displayList(slyAndPure(listOfAllStudents, i));
+        }
       }
     });
   });
@@ -354,8 +385,12 @@ function slyAndPure(listOfAllStudents, i) {
 function expelStudent(listOfAllStudents) {
   document.querySelectorAll(".expel").forEach((e, i) => {
     e.addEventListener("click", () => {
-      listOfAllStudents.splice([i], 1);
-      displayList(listOfAllStudents);
+      if (listOfAllStudents[i].firstname === "Jonathan") {
+        alert("Cant do That");
+      } else {
+        listOfAllStudents.splice([i], 1);
+        displayList(listOfAllStudents);
+      }
     });
   });
 }
@@ -370,27 +405,65 @@ function addStudent(listOfAllStudents) {
   let subBlood = document.getElementById("blood").value;
   let subGender = document.getElementById("gender").value;
   console.log(fname, mname, lname, subHouse, subBlood, subGender);
-
-  listOfAllStudents.push({
-    firstname:
-      fname.substring(0, 1).toUpperCase() + fname.toLowerCase().slice(1),
-    middlename:
-      mname.substring(0, 1).toUpperCase() + mname.toLowerCase().slice(1),
-    lastname:
-      lname.substring(0, 1).toUpperCase() + lname.toLowerCase().slice(1),
-    gender:
-      subGender.substring(0, 1).toUpperCase() +
-      subGender.toLowerCase().slice(1),
-    house:
-      subHouse.substring(0, 1).toUpperCase() + subHouse.toLowerCase().slice(1),
-    bloodStatus:
-      subBlood.substring(0, 1).toUpperCase() + subBlood.toLowerCase().slice(1),
-    nickname: undefined,
-    prefect: false,
-    insquad: false,
-    expelled: false,
-  });
+  if (fname === "") {
+    alert("Student most have a Firstname");
+  } else {
+    listOfAllStudents.unshift({
+      firstname:
+        fname.substring(0, 1).toUpperCase() + fname.toLowerCase().slice(1),
+      middlename:
+        mname.substring(0, 1).toUpperCase() + mname.toLowerCase().slice(1),
+      lastname:
+        lname.substring(0, 1).toUpperCase() + lname.toLowerCase().slice(1),
+      gender:
+        subGender.substring(0, 1).toUpperCase() +
+        subGender.toLowerCase().slice(1),
+      house:
+        subHouse.substring(0, 1).toUpperCase() +
+        subHouse.toLowerCase().slice(1),
+      bloodStatus:
+        subBlood.substring(0, 1).toUpperCase() +
+        subBlood.toLowerCase().slice(1),
+      nickname: undefined,
+      prefect: false,
+      insquad: false,
+      expelled: false,
+    });
+  }
   displayList(listOfAllStudents);
+}
+
+//* ---------- Hacking ----------
+function intHacking() {
+  document.querySelector("body").style.background = "red";
+  document.querySelector("h1").textContent = "Student List Was Hacked";
+  hackActive = true;
+  let elever = [...allStudent];
+  let ranBlood = ["Pure", "Half-Blood"];
+  console.log(elever);
+  elever.forEach((e, i) => {
+    if (e.bloodStatus === "Pure") {
+      let ranNumber = Math.floor(Math.random() * 2);
+      e.bloodStatus = ranBlood[ranNumber];
+      console.log((e.bloodStatus = ranBlood[ranNumber]));
+    } else {
+      e.bloodStatus = "Pure";
+    }
+  });
+  elever.unshift({
+    firstname: "Jonathan",
+    middlename: "Anthony",
+    lastname: "Weldon",
+    nickname: undefined,
+    bloodStatus: "Pure",
+    gender: "Boy",
+    house: "Hufflepuff",
+    prefect: false,
+    expelled: false,
+    insquad: false,
+  });
+  console.log(elever);
+  displayList(elever);
 }
 
 //* ---------- Display List ----------
@@ -488,6 +561,7 @@ function popupWindow(student) {
   modal.style.display = "grid";
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
 }
+// closes the Modal Window
 modal.addEventListener("click", () => {
   modal.style.display = "none";
   document.getElementsByTagName("body")[0].style.overflow = "visible";
